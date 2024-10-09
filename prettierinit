@@ -1,0 +1,16 @@
+#!/bin/sh
+
+echo "Initialize Prettier"
+
+yarn add prettier -D
+
+prettierrc_content='{
+    "semi": false,
+    "proseWrap": "always",
+    "printWidth": 120
+}
+'
+
+echo "$prettierrc_content" > .prettierrc.json
+
+npx mrm@2 lint-staged
