@@ -1,0 +1,37 @@
+#!/bin/sh
+
+yarn create vite . --template react-ts
+
+yarn set version stable
+
+yarnrc_content='
+nodeLinker: node-modules
+'
+
+echo "$yarnrc_content" > .yarnrc.yml
+
+
+gitignore_content='
+
+# yarn
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+'
+
+echo "$gitignore_content" >> .gitignore
+
+yarn
+
+git init .
+
+prettierinit
+
+sed -i '' 's/\*.{js,css,md}/\*.{ts,js,tsx,jsx,css,md}/g' package.json
+
+prettier --write ./src/**/*.{ts,tsx,css}
+

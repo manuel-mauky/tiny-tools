@@ -13,4 +13,4 @@ prettierrc_content='{
 
 echo "$prettierrc_content" > .prettierrc.json
 
-npx mrm@2 lint-staged
+npx mrm@4 lint-staged
