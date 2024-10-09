@@ -1,4 +1,6 @@
-This repo contains some small tools and scripts that I use all the time.
+# Tiny tools
+
+This repo contains some tiny tools and scripts that I use all the time.
 All of them are targeted for MacOS / Linux shells.
 
 ## `prettierinit`
