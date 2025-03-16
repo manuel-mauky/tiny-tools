@@ -21,6 +21,8 @@ gitignore_content='
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+.eslintcache
 '
 
 echo "$gitignore_content" >> .gitignore
@@ -31,7 +33,9 @@ git init .
 
 prettierinit
 
+sed -i '' 's/\*.js/\*.{ts,tsx,js,jsx}/g' package.json
 sed -i '' 's/\*.{js,css,md}/\*.{ts,js,tsx,jsx,css,md}/g' package.json
 
-prettier --write ./src/**/*.{ts,tsx,css}
+yarn prettier --write ./src/**/*.{ts,tsx,css}
 
+echo "" > README.md
