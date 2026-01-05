@@ -10,6 +10,15 @@ Creates a _yarn_ monorepo project
 - create yarn project with workspaces setting
 - add biome settings (see "biomeinit")
 
+## `create-react-in-monorepo`
+
+Creates a react app within a monorepo (see `create-monorepo`).
+Make sure to create the sub folder and `cd` into it before running this command.
+
+- create vite project with "react-ts" template
+- remove eslint
+- add biome setup
+
 
 ## `biomeinit`
 Adds [biome](https://biomejs.dev/) to an existing _yarn_ project.

@@ -1,0 +1,28 @@
+#!/bin/sh
+
+## Setup Vite React app
+yarn create vite . --template react-ts
+
+yarn add -D -E @biomejs/biome
+
+## Update all deps and pin version
+yarn up '*' -E
+
+echo "{}" > biome.json
+echo "$(jq '.root |= false' biome.json)" > biome.json
+echo "$(jq '.extends |= "//"' biome.json)" > biome.json
+
+
+echo "$(jq '.linter.domains.react |= "recommended"' biome.json)" > biome.json
+echo "$(jq '.linter.domains.test |= "recommended"' biome.json)" > biome.json
+
+
+## remove eslint
+yarn remove @eslint/js eslint eslint-plugin-react-hooks eslint-plugin-react-refresh typescript-eslint
+
+echo "$(jq '.scripts.lint |= "biome check"' package.json)" > package.json
+
+rm eslint.config.js
+
+## Cleanup Readme
+echo "" > README.md
