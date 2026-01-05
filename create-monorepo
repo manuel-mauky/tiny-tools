@@ -1,0 +1,52 @@
+#!/bin/sh
+
+
+YARN_VERSION="4.7.0"
+NODE_VERSION="24.10.0"
+
+# Basic root project setup
+yarn init -2
+
+yarn set version stable
+
+yarnrc_content='
+nodeLinker: node-modules
+'
+
+echo "$yarnrc_content" > .yarnrc.yml
+
+gitignore_content='
+# yarn
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+node_modules
+
+.idea
+'
+
+echo "$gitignore_content" > .gitignore
+
+
+## Adjustments in root package.json
+
+echo "$(jq '.private |= true' package.json)" > package.json
+echo "$(jq '.type |= "module"' package.json)" > package.json
+
+echo "$(jq '.workspaces |= ["packages/*"]' package.json)" > package.json
+
+echo "$(jq --arg nodeversion $NODE_VERSION '.engines.node |= "^" + $nodeversion' package.json)" > package.json
+echo "$(jq --arg yarnversion $YARN_VERSION '.engines.yarn |= "^" + $yarnversion' package.json)" > package.json
+
+yarn
+
+## Additional adjustments
+echo "" > README.md
+
+## Setup biome
+biomeinit

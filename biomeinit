@@ -1,0 +1,23 @@
+#!/bin/sh
+
+yarn add -D -E @biomejs/biome
+
+echo "$(jq '.scripts.lint |= "biome check"' package.json)" > package.json
+echo "$(jq '.scripts.["lint:write"] |= "biome check --write"' package.json)" > package.json
+
+yarn exec biome init
+
+### Adjust biome settings
+echo "$(jq '.formatter.indentStyle |= "space"' biome.json)" > biome.json
+echo "$(jq '.formatter.lineWidth |= 120' biome.json)" > biome.json
+echo "$(jq '.formatter.indentWidth |= 2' biome.json)" > biome.json
+
+echo "$(jq '.javascript.formatter.semicolons |= "asNeeded"' biome.json)" > biome.json
+echo "$(jq '.json.parser.allowComments |= true' biome.json)" > biome.json
+
+echo "$(jq '.overrides[0].includes |= ["**/*.test.ts"]' biome.json)" > biome.json
+echo "$(jq '.overrides[0].linter.rules.style.noNonNullAssertion |= "off"' biome.json)" > biome.json
+
+### format initial code
+yarn run lint:write
+
