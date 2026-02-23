@@ -418,6 +418,26 @@ packages=(
     web-types-htmx
     web-types-lit
     wenk
+    # Sandworm-mode: https://socket.dev/blog/sandworm-mode-npm-worm-ai-toolchain-poisoning
+    claud-code
+    cloude-code
+    cloude
+    crypto-locale
+    crypto-reader-info
+    detect-cache
+    format-defaults
+    hardhta
+    locale-loader-pro
+    naniod
+    node-native-bridge
+    opencraw
+    parse-compat
+    rimarf
+    scan-store
+    secp256
+    suport-color
+    veim
+    yarsg
 )
 
 # Base folder (relative to the project root)
