@@ -438,6 +438,149 @@ packages=(
     suport-color
     veim
     yarsg
+
+    # canisterworm 2026-03-23 https://socket.dev/supply-chain-attacks/canisterworm
+    @pypestream/floating-ui-dom
+    @leafnoise/mirage
+    opengov-k6-core
+    eslint-config-service-users
+    jest-preset-ppf
+    babel-plugin-react-pure-component
+    cit-playwright-tests
+    react-leaflet-marker-layer
+    react-leaflet-cluster-layer
+    react-autolink-text
+    @opengov/ppf-eslint-config
+    @opengov/form-utils
+    @opengov/form-renderer
+    @opengov/form-builder
+    @opengov/qa-record-types-api
+    eslint-config-ppf
+    @opengov/ppf-backend-types
+    @airtm/uuid-base32
+    @virtahealth/substrate-root
+    react-leaflet-heatmap-layer
+    @emilgroup/changelog-sdk-node
+    @emilgroup/process-manager-sdk
+    @emilgroup/discount-sdk-node
+    @emilgroup/document-uploader
+    @emilgroup/discount-sdk
+    @emilgroup/partner-portal-sdk
+    @emilgroup/docxtemplater-util
+    @emilgroup/gdv-sdk-node
+    @emilgroup/setting-sdk
+    @emilgroup/accounting-sdk
+    @emilgroup/task-sdk-node
+    @emilgroup/numbergenerator-sdk-node
+    @emilgroup/task-sdk
+    @emilgroup/setting-sdk-node
+    @emilgroup/partner-sdk
+    @emilgroup/commission-sdk
+    @emilgroup/customer-sdk
+    @emilgroup/commission-sdk-node
+    @emilgroup/document-sdk-node
+    @emilgroup/insurance-sdk
+    @teale.io/eslint-config
+    @teale.io/eslint-config
+    @teale.io/eslint-config
+    @teale.io/eslint-config
+    @emilgroup/document-sdk-node
+    @emilgroup/insurance-sdk
+    @emilgroup/changelog-sdk-node
+    @emilgroup/document-uploader
+    @emilgroup/process-manager-sdk
+    @emilgroup/discount-sdk-node
+    @emilgroup/discount-sdk
+    @emilgroup/partner-portal-sdk
+    @emilgroup/docxtemplater-util
+    @emilgroup/gdv-sdk-node
+    @emilgroup/setting-sdk
+    @emilgroup/accounting-sdk
+    @emilgroup/task-sdk-node
+    @emilgroup/numbergenerator-sdk-node
+    @emilgroup/task-sdk
+    @emilgroup/setting-sdk-node
+    @emilgroup/partner-sdk
+    @emilgroup/commission-sdk
+    @emilgroup/commission-sdk-node
+    @emilgroup/customer-sdk
+    @emilgroup/document-sdk-node
+    @emilgroup/insurance-sdk
+    @teale.io/eslint-config
+    @emilgroup/document-uploader
+    @emilgroup/docxtemplater-util
+    @emilgroup/gdv-sdk-node
+    @emilgroup/task-sdk-node
+    @emilgroup/setting-sdk
+    @emilgroup/task-sdk
+    @emilgroup/numbergenerator-sdk-node
+    @emilgroup/setting-sdk-node
+    @emilgroup/accounting-sdk
+    @emilgroup/partner-sdk
+    @emilgroup/commission-sdk
+    @emilgroup/commission-sdk-node
+    @emilgroup/customer-sdk
+    @emilgroup/document-sdk-node
+    @emilgroup/insurance-sdk
+    @teale.io/eslint-config
+    @emilgroup/account-sdk
+    @emilgroup/customer-sdk
+    @emilgroup/translation-sdk-node
+    @emilgroup/process-manager-sdk-node
+    @emilgroup/partner-sdk-node
+    @emilgroup/partner-portal-sdk-node
+    @emilgroup/gdv-sdk
+    @emilgroup/auth-sdk
+    @emilgroup/tenant-sdk
+    @emilgroup/document-sdk
+    @emilgroup/accounting-sdk-node
+    @emilgroup/notification-sdk-node
+    @emilgroup/document-sdk-node
+    @emilgroup/billing-sdk
+    @emilgroup/account-sdk-node
+    @emilgroup/public-api-sdk
+    @emilgroup/customer-sdk-node
+    @emilgroup/auth-sdk-node
+    @emilgroup/payment-sdk
+    @emilgroup/public-api-sdk-node
+    @emilgroup/tenant-sdk-node
+    @emilgroup/payment-sdk-node
+    @emilgroup/insurance-sdk
+    @emilgroup/api-documentation
+    @emilgroup/billing-sdk-node
+    @emilgroup/claim-sdk-node
+    @emilgroup/insurance-sdk-node
+    @emilgroup/claim-sdk
+    @teale.io/eslint-config
+    @teale.io/eslint-config
+    @emilgroup/account-sdk
+    @emilgroup/customer-sdk
+    @emilgroup/translation-sdk-node
+    @emilgroup/partner-sdk-node
+    @emilgroup/gdv-sdk
+    @emilgroup/partner-portal-sdk-node
+    @emilgroup/process-manager-sdk-node
+    @emilgroup/tenant-sdk
+    @emilgroup/document-sdk
+    @emilgroup/notification-sdk-node
+    @emilgroup/auth-sdk
+    @emilgroup/billing-sdk
+    @emilgroup/accounting-sdk-node
+    @emilgroup/document-sdk-node
+    @emilgroup/account-sdk-node
+    @emilgroup/public-api-sdk
+    @emilgroup/auth-sdk-node
+    @emilgroup/customer-sdk-node
+    @emilgroup/public-api-sdk-node
+    @emilgroup/tenant-sdk-node
+    @emilgroup/payment-sdk
+    @emilgroup/payment-sdk-node
+    @emilgroup/api-documentation
+    @emilgroup/insurance-sdk
+    @emilgroup/billing-sdk-node
+    @emilgroup/claim-sdk-node
+    @emilgroup/insurance-sdk-node
+    @emilgroup/claim-sdk
 )
 
 # Base folder (relative to the project root)
@@ -453,7 +596,7 @@ echo "Checking for packages in $node_modules_dir ..."
 for pkg in $packages; do
   if [[ -d "$node_modules_dir/$pkg" ]]; then
     echo "✅ Found: $pkg"
-  else
-    echo "❌ Not found: $pkg"
+#  else
+#    echo "❌ Not found: $pkg"
   fi
 done
